@@ -1,17 +1,19 @@
-import { hero } from "./blocks/hero";
-import { features } from "./blocks/features";
+import { features } from "./blocks/feature.js"
+import {hero} from "./blocks/hero.js"
 
-const renderers = { hero, features };
 
-export function renderBlocks(blocks) {
+const renderers = {hero, features}
+
+export function renderBlocks(blocks){
     return blocks.map((block) => {
-        const render = renderers[block.type];
+        const render = renderers[block.type]
 
-        if (!render) {
-            console.warn(`no block ${block.type}`);
-            return '';
+        if (!render){
+            console.warn(`no block ${block.type}`)
+            return ""
+
         }
 
-        return render(block);
-    }).join('');
+        return render(block)
+    }).join("")
 }
